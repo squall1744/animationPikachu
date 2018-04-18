@@ -179,8 +179,10 @@ function writeCode(prevCode, code, callback) {
 
 function changeSpeed() {
   $('.actions').on('click','button', e => {
-    let speed = $(e.currentTarget).attr('data-speed')
-  
+    let $button =$(e.currentTarget)
+    let speed = $button.attr('data-speed')
+    $button.addClass('active').siblings('.active').removeClass('active')
+
     switch(speed) {
       case 'slow':
         duration = 100
