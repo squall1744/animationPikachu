@@ -164,13 +164,13 @@ changeSpeed()
 
 function writeCode(prevCode, code, callback) {
   let n = 0
-  setTimeout(function fn() {
+  let id = setTimeout(function fn() {
     n += 1
     codeArea.innerHTML = Prism.highlight(prevCode + code.substring(0, n), Prism.languages.css, 'css')
     styleTag.innerHTML = prevCode + code.substring(0, n)
     codeArea.scrollTop = codeArea.scrollHeight
     if(n < code.length){
-      setTimeout(fn, duration)
+      id = setTimeout(fn, duration)
     }else {
 
     }
