@@ -51,14 +51,19 @@
         }
         audioAutoPlay();
     });
-   
+    
       if (/i(Phone|P(o|a)d)/.test(navigator.userAgent)) {
         $(document).one('touchstart',
           function(e) {
-              $('#audiojs').get(0).touchstart = true;
+              // $('#audiojs').get(0).touchstart = true;
               $('#audiojs').get(0).play();
-              return false;
-          });
+          })
+      }else if(navigator.userAgent.indexOf("Safari") > -1) {
+        $(document).one('click',
+          function(e) {
+              // $('#audiojs').get(0).onclick = true;
+              $('#audiojs').get(0).play();
+          })       
       }
   </script>
 </body>
