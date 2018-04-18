@@ -32,7 +32,7 @@ body {
   flex: 1;
   height: 50%;
 }
-/* 
+
 .actions {
   position: absolute;
   top: 0;
@@ -44,8 +44,7 @@ body {
 .actions button {
   margin:10px;
   padding: 8px;
+  border-radius: 2px;
+  box-shadow: 0 0 2px #666;
 }
 
-.actions button.active {
-
-} */

@@ -154,20 +154,43 @@ let code =`/*
 
 /*我们的皮卡丘画完啦, 可爱吧*/
 `
-
+let duration = 50
 writeCode('', code)
+changeSpeed()
+
+
+
 
 
 function writeCode(prevCode, code, callback) {
   let n = 0
-  
-  let clock = setInterval(() => {
+  setTimeout(function fn() {
     n += 1
     codeArea.innerHTML = Prism.highlight(prevCode + code.substring(0, n), Prism.languages.css, 'css')
     styleTag.innerHTML = prevCode + code.substring(0, n)
     codeArea.scrollTop = codeArea.scrollHeight
-    if(n >= code.length) {
-      clearInterval(clock) 
+    if(n < code.length){
+      setTimeout(fn, duration)
+    }else {
+
     }
-  },50) 
+  }, duration)
+}
+
+function changeSpeed() {
+  $('.actions').on('click','button', e => {
+    let speed = $(e.currentTarget).attr('data-speed')
+  
+    switch(speed) {
+      case 'slow':
+        duration = 100
+        break
+      case 'medium':
+        duration = 50
+        break
+      case 'fast':
+        duration = 10
+        break
+    }
+  })
 }
