@@ -155,7 +155,7 @@
   
   /*我们的皮卡丘画完啦, 可爱吧*/
   `
-  let duration = 50
+  let duration = 30
   writeCode('', code)
   changeSpeed()
   
@@ -186,10 +186,10 @@
   
       switch(speed) {
         case 'slow':
-          duration = 100
+          duration = 80
           break
         case 'medium':
-          duration = 50
+          duration = 30
           break
         case 'fast':
           duration = 10
