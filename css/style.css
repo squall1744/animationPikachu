@@ -2,13 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all .5s;
 }
+
 *::after {
   box-sizing: border-box;
 }
+
 *::before {
   box-sizing: border-box;
+}
+
+#previewWrapper * {
+  transition: all .5s;
 }
 
 body {
@@ -47,6 +52,7 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 2px #666;
   background: #fff;
+  transition: all .5s;
 }
 
 .actions button.active {
